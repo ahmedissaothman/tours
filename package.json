@@ -2,9 +2,9 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "start": "vite preview --host --port $PORT",
         "dev": "vite",
-        "build": "vite build",
-        "start": "vite preview --port 10000"
+        "build": "vite build"
     },
     "devDependencies": {
         "axios": "^1.7.4",
