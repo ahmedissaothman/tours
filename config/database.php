@@ -94,8 +94,22 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => 'prefer',  //laravel
+            //'sslmode' => 'require',   //aiven
         ],
+
+//         'pgsql' => [
+//     'driver' => 'pgsql',
+//     'host' => env('DB_HOST', '127.0.0.1'),
+//     'port' => env('DB_PORT', '5432'),
+//     'database' => env('DB_DATABASE', 'forge'),
+//     'username' => env('DB_USERNAME', 'forge'),
+//     'password' => env('DB_PASSWORD', ''),
+//     'charset' => 'utf8',
+//     'prefix' => '',
+//     'schema' => 'public',
+//     'sslmode' => 'prefer', // or 'require' if needed
+// ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
