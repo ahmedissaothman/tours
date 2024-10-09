@@ -2,7 +2,7 @@
 <div class="container-fluid position-relative nav-bar p-0">
     <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-            <a href="" class="navbar-brand">
+            <a href="{{ route('welcome') }}" class="navbar-brand">
                 <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -10,22 +10,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="{{ route('welcome') }}" class="nav-item nav-link active">Home</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
+                    <a href="{{ route('welcome') }}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                     <a href="#" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tour Packages</a>
                         <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="{{route('island-tour')}}" class="dropdown-item">Island Tour</a>
-                            <a href="{{route('boat-tour')}}" class="dropdown-item">Boat Tour</a>
-                            <a href="{{route('combination-tour')}}" class="dropdown-item">Combination Tour</a>
+                            <a href="{{route('island-tour')}}" class="dropdown-item {{ Request::is('island-tour') ? 'active' : '' }}">Island Tour</a>
+                            <a href="{{route('boat-tour')}}" class="dropdown-item {{ Request::is('boat-tour') ? 'active' : '' }}">Boat Tour</a>
+                            <a href="{{route('combination-tour')}}" class="dropdown-item {{ Request::is('combination-tour') ? 'active' : '' }}">Combination Tour</a>
                         </div>
                     </div>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">ContactUs</a>
-                    {{-- <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#registerModal">SignUp</a>
-                    <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#loginModal">login</a> --}}
-
-                    
+                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact Us</a>
                 </div>
             </div>
         </nav>
@@ -34,11 +30,12 @@
 <!-- Navbar End -->
 
 
+
 {{-- <!-- Trigger for Modal -->
 <a href="#" data-toggle="modal" data-target="#registerModal" class="btn btn-primary">Sign Up Now</a> --}}
 
 <!-- Registration Modal Start -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -86,14 +83,14 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Registration Modal End -->
 
 
 
 
 <!-- Login Modal Start -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary justify-content-center">
@@ -123,5 +120,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Login Modal End -->
+
